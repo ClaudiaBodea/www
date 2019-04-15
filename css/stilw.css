@@ -1,0 +1,197 @@
+* { 
+-webkit-box-sizing: border-box; 
+-moz-box-sizing: border-box; 
+box-sizing: border-box; 
+} /* declaratia este necesar pt o vizualizare corecta si in IE si Mozila
+Proprietatea box-sizing nu este însa implementata de toate browserele. Dimensiunile width si height vor reprezenta marimea blocului masurata pe exteriorul border-ului.*/
+
+ 
+header, section, footer, aside, nav, main, article 
+{
+display: block;
+}  /* toate sectiunile siteului mai sus mentionate sunt blocuri, schimbandu-si proprietatea din in-line in block*/
+aside, article, body, div, footer, header, html, nav, ol, p, ul { 
+ margin: 0; /*fara margin*/
+ padding: 0; /*fara padding*/
+ font-family:Arial;/*intreg siteul este scris cu Arial*/
+} 
+body { 
+ background-color :#ebebeb; /*culoarea de fundal pt tot site-ul*/
+ color: #555555; /*culoarea scrisului pt intregul site*/
+} 
+.pagina { 
+margin: 0 auto;/*centrez intreg siteul*/
+ width: 1000px; 
+ overflow: hidden; /*proprietatea overflow ajuta footer sa alunece in jos; forteaza extinderea unui bloc astfel încât sa contina efectiv elementele din interiorul sau. Blocurile flotante nu sunt luate în calcul la stabilirea înaltimii blocului parinte*/
+} 
+#continut { 
+  width: 100%; /*extindem continutul pe 1000 px*/
+ margin: 0 auto; /*centram continutul*/	
+ overflow: hidden; /*proprietatea overflow ajuta footer sa alunece in jos; forteaza extinderea unui bloc astfel încât sa contina efectiv elementele din interiorul sau.*/
+} 
+header {  
+width:100%;/*1000px*/
+color:#EA141F;
+background-color: #364956; 
+position: relative;
+overflow: hidden;
+}
+
+nav { 
+ width: 1000px; 
+ height: 3rem; 
+} 
+#navcontainer { 
+ background: #364956; 
+ height: 3rem; 
+ width: 100%; 
+} 
+nav li { 
+ float: left; 
+ display:inline; /* Dispunere in linie */ 
+ height: 3.0rem; 
+} 
+nav { 
+ width: 1000px; 
+ margin: 0 auto; 
+ height: 3rem; 
+} 
+nav ul li a { 
+ display:block; 
+ height: 3rem; /* coincide cu marimea barei nav */
+ text-align: center; 
+ color: white; 
+ padding: 1rem; 
+ text-decoration: none;/*suprimam sublinierea*/
+} 
+nav a:hover, nav a:active { 
+ background-color: #ebebeb;/*la trecerea mouse-ului nav afiseaza fudalul de culoare rosie*/
+ color:#000; 
+} 
+nav a.active{
+	background-color: #EA141F; 
+	
+}
+main{ 
+ width: 65%; /* 65% din continut*/
+ padding: 0.1rem; 
+ float:left; /*blocurile flotante nu intra in calculul inaltimii blocului in care sunt incluse*/
+ padding-top:50px; /*distantam main de nav*/
+ position: relative; /*afiseaza blocul intr-o pozitie decalata fata de pozitia normala*/
+} 
+aside { 
+ width: 30%; 
+ padding: 0.1rem; 
+ float:right; 
+ overflow: hidden; 
+ margin: 0 auto; 
+ padding-top:50px; /*distantam aside de nav*/
+ border-radius:8px; /*rotunjire chenar*/
+} 
+article { 
+margin-bottom:25px;/*distantam cele 2 elemente article, impunand distanta marginii de jos*/
+ background-color :#FFFFFF; 
+ width: 100%; /*100% din 65%, adica din main*/
+ border:1px solid #cdcdcd; 
+ border-radius:8px; /*rotunjire chenar*/
+ position: relative; /*afiseaza elementul intr-o pozitie decalata fata de pozitia normala*/
+}  
+article img, section img{ 
+ float:left; /*in acest caz este folosita la umplerea cu text in jurul foto; plaseaza imaginea in stanga si imi permite umplerea cu text a zonei ramase libere in dreapta*/
+ margin-right:1.3rem ; /*dintanta dreapta*/
+ margin-left: 1.3rem; 
+ border: 4px solid #dcdcdc; /*chenar imagine*/
+  border-radius:6px; /*rotunjire chenar imagine*/
+} 
+article h1 { 
+ padding: 0.8rem; 
+}
+
+article p { 
+ padding-left: 0.5rem; 
+ padding-bottom: 0.2rem; 
+}
+
+ 
+
+
+footer { 
+margin:0 auto;
+background: #364956; 
+color:#fff;
+ width: 100%; 
+border:1px solid #cdcdcd; 
+ position:relative; /*impune o pozitie decalata fata de afisarea implicita in care ar aparea in mod normal*/
+ top: 50%; 
+ margin-bottom: 7px; 
+/* aliniez scrisul in raport cu aspectul siteului */
+text-align:center;
+font-size: 0.8rem;
+padding-top: 4px;
+padding-bottom: 4px;
+
+} 
+
+.dreapta { 
+ background-color : #ffffff; 
+ width: 100%; 
+ border:1px solid #cdcdcd; 
+ border-radius:8px; /*rotunjire chenar*/
+ 
+}  
+.dreapta h1 { 
+ font-size:20px; 
+ margin: 0 10px 10px 10px; 
+ padding: 9px 9px 9px 9px; 
+ color: #444; 
+ font-size: 20px; 
+ line-height: 25px; 
+ border-bottom: 1px solid #d2d2d2; /*linia de sub postari populare*/
+ font-family: 'Monda', sans-serif; 
+ font-weight: bold; 
+ text-decoration: none; 
+ text-transform: capitalize; 
+} 
+.dreapta p{ 
+ font-size:0.8em; 
+ clear: both; /*liber stanga, adica anuleaza stilizarea de pana acum, din partea stg*/
+ margin-bottom: 1rem; 
+  padding-bottom: 0.5rem; 
+ padding-right: 0.5rem; 
+ padding-top: 0.5rem; 
+ text-align:justify;
+
+
+} 
+
+.ora { 
+ background-color : #EA141F; 
+ color: white; 
+ position: absolute; /*pozitionat absolut fata de article;impune afisarea elementulul intr-o pozitie definita fata de laturile primului element superior in ierarhie, care la randul sau este pozitionat, fie relativ, fie absolute*/
+ left: 1.5rem; 
+ top: -0.6rem; /*margin este 0, deci pt a urca top devine negativ*/
+ width: 100px; 
+ height: 1.5rem; 
+ text-align: center; 
+ line-height: 1.5rem; /*distanta textului in raport cu inaltimea zonei rosii*/
+  border-radius:3px; /*rotunjire chenar poza*/
+} 
+.postare { 
+ font-family: Arial, Helvetica, Sans-serif; 
+ font-size: 1rem; 
+ line-height: 24px; 
+ text-align: justify; 
+ margin: 1rem; 
+}
+.formular{
+ line-height: 1rem;
+  height: 1rem; 
+}
+
+.umbrit {
+	box-shadow:0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)!important;
+}
+
+.umbrit:hover {
+ box-shadow:0 8px 12px 0 rgba(0,0,0,0.2),0 8px 25px 0 rgba(0,0,0,0.19)!important;}
+	  
